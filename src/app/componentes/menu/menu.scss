@@ -1,0 +1,16 @@
+:host {   
+    min-width: 150px !important;
+    height: 100% !important;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-top: 0px;
+    position: fixed
+}
+mat-expansion-panel {
+    min-width: 100%;
+    min-height: 100%;
+}
+mat-sidenav {
+    min-width: 100% !important;
+    min-height: 100%;
+}

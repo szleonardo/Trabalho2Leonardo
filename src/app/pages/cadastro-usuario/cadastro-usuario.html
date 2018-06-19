@@ -1,0 +1,114 @@
+<form [formGroup]="formGroup">  
+    <mat-card fxLayout="column">
+    <mat-card-title>
+        Cadastro Usuário
+    </mat-card-title>
+
+    <mat-card-content fxFlex="100%">
+        <div fxLayout="column">
+            <div fxLayout="row" >
+                    <mat-form-field fxFlex="50%">
+                        <input matInput type="text" 
+                            [(ngModel)]="usuario.nome"
+                            placeholder="Nome"
+                            formControlName="nome">
+                            <mat-error align="start"
+                                *ngIf="formGroup.controls['nome'].hasError('required')" >
+                                Campo obrigatório</mat-error>
+                    </mat-form-field>
+                    <span fxFlex="2%"></span>
+                    <mat-form-field fxFlex="50%">
+                        <input matInput type="text" 
+                            [(ngModel)]="usuario.cpf"
+                            placeholder="CPF"
+                            formControlName="cpf"  required>
+                        <mat-error align="start"
+                                *ngIf="formGroup.controls['cpf'].hasError('required')" >
+                                Campo obrigatório</mat-error>
+                    </mat-form-field>
+            </div>
+            <div fxLayout="row" >
+                    <mat-form-field fxFlex="50%">
+                        <input matInput type="text" 
+                            [(ngModel)]="usuario.email"
+                            placeholder="E-mail"
+                            formControlName="email">
+                            <mat-error align="start"
+                                *ngIf="formGroup.controls['email'].hasError('required')" >
+                                Campo obrigatório</mat-error>
+                    </mat-form-field>
+                    <span fxFlex="2%"></span>
+                    <mat-form-field fxFlex="50%">
+                        <input matInput type="text" 
+                            [(ngModel)]="usuario.login"
+                            placeholder="Login"
+                            formControlName="login"  required>
+                        <mat-error align="start"
+                                *ngIf="formGroup.controls['login'].hasError('required')" >
+                                Campo obrigatório</mat-error>
+                    </mat-form-field>
+            </div>
+            <div fxLayout="row" >
+                    <mat-form-field fxFlex="23%">
+                        <input matInput type="text" 
+                            [(ngModel)]="usuario.senha"
+                            placeholder="Senha"
+                            formControlName="senha" required>
+                            <mat-error align="start"
+                                *ngIf="formGroup.controls['senha'].hasError('required')" >
+                                Campo obrigatório</mat-error>
+                    </mat-form-field>
+                    <span fxFlex="2%"></span>
+                    <mat-form-field fxFlex="23%">
+                        <input matInput type="text" 
+                            [(ngModel)]="usuario.confirmesenha"
+                            placeholder="Confirme Senha"
+                            formControlName="confirmesenha"  required>
+                        <mat-error align="start"
+                                *ngIf="formGroup.controls['confirmesenha'].hasError('required')" >
+                                Campo obrigatório</mat-error>
+                    </mat-form-field>
+                    <span fxFlex="2%"></span>
+                    <mat-form-field fxFlex="50%">
+                            <input matInput type="text" 
+                                [(ngModel)]="usuario.apelido"
+                                placeholder="Apelido"
+                                formControlName="apelido">
+                        </mat-form-field>
+            </div>
+            <div fxLayout="row" >
+                    <mat-form-field fxFlex="23%">
+                        <input matInput type="text" 
+                            [(ngModel)]="usuario.telefone"
+                            placeholder="Telefone"
+                            formControlName="telefone">
+
+                    </mat-form-field>
+                    <span fxFlex="2%"></span>
+                    <mat-form-field fxFlex="23%">
+                        <input matInput type="text" 
+                            [(ngModel)]="usuario.celular"
+                            placeholder="Celular"
+                            formControlName="celular">
+
+                    </mat-form-field>
+                    <span fxFlex="2%"></span>
+                    <mat-form-field fxFlex="50%">
+                            <input matInput type="text" 
+                                [(ngModel)]="usuario.grupousuario"
+                                placeholder="Grupo Usuario"
+                                formControlName="grupousuario"  required>
+                            <mat-error align="start"
+                                    *ngIf="formGroup.controls['grupousuario'].hasError('required')" >
+                                    Campo obrigatório</mat-error>
+                        </mat-form-field>
+            </div>
+        </div>
+    </mat-card-content>
+    <mat-checkbox>Ativo</mat-checkbox>
+    <mat-card-actions>
+        <button color="#efefef"  [disabled]="formGroup.invalid" (click)="salvar()" mat-button>Salvar</button>
+    </mat-card-actions>
+
+</mat-card>
+</form>
